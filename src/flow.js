@@ -7,6 +7,7 @@
 
 // this object is generated from Flow Builder under "..." > Endpoint > Snippets > Responses
 // To navigate to a screen, return the corresponding response from the endpoint. Make sure the response is encrypted.
+/*
 const SCREEN_RESPONSES = {
   LOAN: {
     screen: "LOAN",
@@ -76,6 +77,92 @@ const SCREEN_RESPONSES = {
     data: {
       extension_message_response: {
         params: {
+          flow_token: "flows-builder-965f2570",
+          some_param_name: "xyz",
+        },
+      },
+    },
+  },
+};
+
+*/
+
+// To navigate to a screen, return the corresponding response from the endpoint. Make sure the response is enccrypted.
+const SCREEN_RESPONSES = {
+  MOBILE: {
+    screen: "MOBILE",
+    data: {},
+  },
+  MOBILE_VERIFICATION: {
+    screen: "MOBILE_VERIFICATION",
+    data: {
+      screen_0_TextInput_0: "Example",
+    },
+  },
+  AADHAR: {
+    screen: "AADHAR",
+    data: {
+      screen_1_TextInput_0: "Example",
+      screen_0_TextInput_0: "Example",
+    },
+  },
+  AADHAR_VERIFICATION: {
+    screen: "AADHAR_VERIFICATION",
+    data: {
+      screen_2_TextInput_0: "Example",
+      screen_1_TextInput_0: "Example",
+      screen_0_TextInput_0: "Example",
+    },
+  },
+  PAN: {
+    screen: "PAN",
+    data: {
+      screen_3_TextInput_0: "Example",
+      screen_2_TextInput_0: "Example",
+      screen_1_TextInput_0: "Example",
+      screen_0_TextInput_0: "Example",
+    },
+  },
+  EMPLOYMENT: {
+    screen: "EMPLOYMENT",
+    data: {
+      screen_4_TextInput_0: "Example",
+      screen_3_TextInput_0: "Example",
+      screen_2_TextInput_0: "Example",
+      screen_1_TextInput_0: "Example",
+      screen_0_TextInput_0: "Example",
+    },
+  },
+  PRE_SANCTION: {
+    screen: "PRE_SANCTION",
+    data: {
+      screen_5_TextInput_0: "Example",
+      screen_5_RadioButtonsGroup_1: "Example",
+      screen_4_TextInput_0: "Example",
+      screen_3_TextInput_0: "Example",
+      screen_2_TextInput_0: "Example",
+      screen_1_TextInput_0: "Example",
+      screen_0_TextInput_0: "Example",
+    },
+  },
+  DISBURSEMENT: {
+    screen: "DISBURSEMENT",
+    data: {
+      screen_6_TextInput_0: "Example",
+      screen_5_TextInput_0: "Example",
+      screen_5_RadioButtonsGroup_1: "Example",
+      screen_4_TextInput_0: "Example",
+      screen_3_TextInput_0: "Example",
+      screen_2_TextInput_0: "Example",
+      screen_1_TextInput_0: "Example",
+      screen_0_TextInput_0: "Example",
+    },
+  },
+  SUCCESS: {
+    screen: "SUCCESS",
+    data: {
+      extension_message_response: {
+        params: {
           flow_token: "REPLACE_FLOW_TOKEN",
           some_param_name: "PASS_CUSTOM_VALUE",
         },
@@ -85,6 +172,7 @@ const SCREEN_RESPONSES = {
 };
 
 // Example loan repayments for the amounts listed above
+/*
 const LOAN_OPTIONS = {
   amount1: {
     months12: "₹ 63,000",
@@ -99,7 +187,7 @@ const LOAN_OPTIONS = {
     months48: "₹ 8,000",
   },
 };
-
+*/
 export const getNextScreen = async (decryptedBody) => {
   const { screen, data, version, action, flow_token } = decryptedBody;
   console.log(
@@ -128,12 +216,13 @@ export const getNextScreen = async (decryptedBody) => {
   if (action === "INIT") {
     console.log(`INIT is called`);
     return {
-      ...SCREEN_RESPONSES.LOAN,
+      ...SCREEN_RESPONSES.MOBILE,
     };
   }
 
   if (action === "data_exchange") {
     // handle the request based on the current screen
+    /*
     switch (screen) {
       // handles when user interacts with LOAN screen
       case "LOAN":
@@ -203,6 +292,8 @@ export const getNextScreen = async (decryptedBody) => {
       default:
         break;
     }
+
+    */
   }
 
   console.error("Unhandled request body:", decryptedBody);
